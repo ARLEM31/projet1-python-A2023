@@ -1,7 +1,7 @@
 '''Phase 1 du projet: analyseur de commande et chercheur d'historique'''
 
 
-import argparse, json, requests, datetime
+import argparse, json, requests
 from datetime import datetime as dt
 
 
@@ -31,11 +31,11 @@ def analyser_commande():
     return parser.parse_args()
 
 
-def produire_historique():
+def produire_historique(symbole, d_debut, d_fin, info_demande):
     '''Produit un historique en fonction du symbole et de la date demandé'''
 
     url = f'https://pax.ulaval.ca/action/{symbole}/historique/'
-    timeline = {"début":date_debut, "fin": date_fin}
+    timeline = {"début":d_debut, "fin": d_fin}
     reponse = json.loads(requests.get(url, timeline).text)
     historique = []
     for keys in reponse["historique"]:
