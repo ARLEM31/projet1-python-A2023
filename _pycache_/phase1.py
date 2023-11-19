@@ -1,8 +1,10 @@
 '''Phase 1 du projet: analyseur de commande et chercheur d'historique'''
 
 
-import argparse, json, requests
 from datetime import datetime as dt
+import argparse
+import json
+import requests
 
 
 def analyser_commande():
