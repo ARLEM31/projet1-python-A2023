@@ -21,8 +21,8 @@ def analyser_commande():
         description = 'Va chercher les valeurs historiques de symboles boursiers')
     parser.add_argument('symbole', nargs='+', help = "Nom d'un symbole boursier")
     parser.add_argument('-f', '--fin', dest = 'fin', metavar='DATE',
-        default = dt.today().date().strftime("%Y-%m-%d",
-        help = 'La date recherchée la plus ancienne (format: AAAA-MM-JJ)'))
+        default = dt.today().date().strftime("%Y-%m-%d"),
+        help = 'La date recherchée la plus ancienne (format: AAAA-MM-JJ)')
     parser.add_argument('-d', '--début', dest = 'début', metavar= 'DATE',
         help = 'La date recherchée la plus récente (format: AAAA-MM-JJ)')
     parser.add_argument('-v', '--valeur',
